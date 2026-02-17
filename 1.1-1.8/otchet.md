@@ -171,3 +171,30 @@ dokart@DESKTOP-L0JFK38:~$
 Secret message is:
 "This is the secret message"
 ```
+
+## 1.7
+```
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get install curl -y
+COPY script.sh /etc/script.sh
+RUN chmod +x /etc/script.sh
+CMD ["/etc/script.sh"]
+```
+
+## 1.8
+```
+FROM devopsdockeruh/simple-web-service:alpine
+CMD ["server"]
+```
+```
+dokart@DESKTOP-L0JFK38:~/devops-docker$ docker run web-server
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+```
